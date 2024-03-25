@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="decoration/css/application.css">
+
+    <script src="cordova.js"></script>
+    <script src="modele/Item.js"></script>
+    <script src="donnee/ItemDAO.js"></script>
+
+    <script src="vue/VueItem.js"></script>
+    <script src="vue/VueAjouterItem.js"></script>
+    <script src="vue/VueModifierItem.js"></script>
+    <script src="vue/VueListeItem.js"></script>
+
+    <script defer src="Application.js"></script>
+</head>
+<body>
+<div id="page-chargement-application">
+    <div class="center">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+</div>
+
+<script type="plain/text" id="html-vue-liste-item">
+    <div class="page">
+        <div class="max-page-size">
+      <h1>Liste des items en stockage</h1>
+      <ul id="liste-item">
+        <li>
+          <div class="flex">
+            <a href="#item/{Item.id}" class="liste-item-item" id="test">{Item.nom}</a>
+            <a href="#modifier-item/{item.id}" class="liste-item-item" id="button-modifier">Modifier</a>
+          </div>
+        </li>
+      </ul>
+      <a class="action" href="#ajouter-item">Ajouter un item</a>
+    </div>
+    </div>
+</script>
+
+<script type="plain/text" id="html-vue-ajouter-item">
+    <div class="page">
+        <div class="max-page-size">
+      <h1>Ajouter un item au stockage</h1>
+      <form id="formulaire-ajouter">
+        <fieldset>
+          <legend>Identification de l'item</legend>
+          <div class="input-group">
+            <input placeholder="Nom" type="text" id="item-nom" class="input"/>
+          </div>
+          <div>
+            <input placeholder="Marque" type="text" id="item-marque" class="input"/>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>D&eacute;tails sur l'item</legend>
+          <div>
+            <textarea placeholder="Description" id="item-description" class="input"></textarea>
+
+            <input type="file" name="file" id="item-image" class="inputfile" />
+            
+          </div>
+        </fieldset>
+        <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+      </form>
+      <a href="#" class="action">Annuler et revenir &agrave; la liste</a>
+        </div>
+    </div>
+  </script>
+
+  <script type="plain/text" id="html-vue-item">
+    <div class="page">
+      <div class="max-page-size">
+        <h1>item stocker</h1>
+        <img src="{Item.image}" alt="Image de l'item" id="test">
+        <h2 id="item-nom"></h2>
+        <p id="item-marque"></p>
+        <p id="item-description"></p>
+        <a href="#" class="action">Revenir &agrave; la liste</a>
+      </div>
+    </div>
+  </script>
+
+  <script type="plain/text" id="html-vue-modifier-item">
+    <div class="page">
+        <div class="max-page-size">
+      <h1>Modifier un item au stockage</h1>
+      <form id="formulaire-modifier">
+        <fieldset>
+          <legend>Identification de l'item</legend>
+          <div class="input-group">
+            <input placeholder="Nom" type="text" id="item-nom" class="input"/>
+          </div>
+          <div>
+            <input placeholder="Marque" type="text" id="item-marque" class="input"/>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>D&eacute;tails sur l'item</legend>
+          <div>
+            <textarea placeholder="Description" id="item-description" class="input"></textarea>
+
+            <input type="file" name="file" id="item-image" class="inputfile" />
+            
+          </div>
+        </fieldset>
+        <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+      </form>
+      <a href="#" class="action">Annuler et revenir &agrave; la liste</a>
+        </div>
+    </div>
+  </script>
+
+</body>
+</html>
